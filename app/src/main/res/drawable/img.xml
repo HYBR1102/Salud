@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    Poner un archivo de preferencia-->
+    <item android:drawable="@drawable/login"/>
+    <item android:drawable="@drawable/circle"/>
+</layer-list>

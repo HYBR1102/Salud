@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_recordatorios">
+
+    <fragment
+        android:id="@+id/nav_recordatorios"
+        android:name="com.example.salud.ui.recordatorios.RecordatoriosFragment"
+        android:label="@string/menu_recordatorios"
+        tools:layout="@layout/fragment_recordatorios">
+        <action
+            android:id="@+id/action_nav_recordatorios_to_nav_medicamentos"
+            app:destination="@id/nav_medicamentos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_medicamentos"
+        android:name="com.example.salud.ui.medicamentos.MedicamentosFragment"
+        android:label="@string/menu_medicamentos"
+        tools:layout="@layout/fragment_medicamentos" >
+        <action
+            android:id="@+id/action_nav_medicamentos_to_nav_consultas"
+            app:destination="@id/nav_consultas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_consultas"
+        android:name="com.example.salud.ui.consultas.ConsultasFragment"
+        android:label="@string/menu_consultas"
+        tools:layout="@layout/fragment_consultas" >
+        <action
+            android:id="@+id/action_nav_consultas_to_nav_twitter"
+            app:destination="@id/nav_twitter" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_twitter"
+        android:name="com.example.salud.ui.twitter.TwitterFragment"
+        android:label="@string/menu_twitter"
+        tools:layout="@layout/fragment_twitter" />
+</navigation>
