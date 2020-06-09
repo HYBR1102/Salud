@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/agregar_alarma_medicamento"
+        android:title="Agregar alarma de medicamento" />
+    <item
+        android:id="@+id/tomar_foto"
+        android:title="Tomar foto" />
+</menu>

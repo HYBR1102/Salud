@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRepetir" />
 
     <EditText
-        android:id="@+id/etDoctor"
+        android:id="@+id/etDosis"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -30,7 +30,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etConsulta" />
+        app:layout_constraintTop_toBottomOf="@+id/etMedicamento" />
 
     <EditText
         android:id="@+id/etLugar"
@@ -44,10 +44,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDoctor" />
+        app:layout_constraintTop_toBottomOf="@+id/etDosis" />
 
     <EditText
-        android:id="@+id/etConsulta"
+        android:id="@+id/etMedicamento"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"

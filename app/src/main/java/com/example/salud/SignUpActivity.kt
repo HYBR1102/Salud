@@ -28,26 +28,29 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-@Suppress("DEPRECATION")
 class SignUpActivity : AppCompatActivity() {
 
-    val REQUEST_IMAGE_CAPTURE = 1
-    val REQUEST_TAKE_PHOTO = 1
-    var currentPhotoPath: String = ""
+//    val REQUEST_IMAGE_CAPTURE = 1
+//    val REQUEST_TAKE_PHOTO = 1
+//    var currentPhotoPath: String = ""
 
-    private val usuarioViewModel: UsuarioViewModel by viewModels {
-        UsuarioViewModelFactory(
-            UsuarioRepository(UsuarioDatabase.getDatabase(applicationContext).usuarioDao())
-        )
-    }
+//    private val usuarioViewModel: UsuarioViewModel by viewModels {
+//        UsuarioViewModelFactory(
+//            UsuarioRepository(UsuarioDatabase.getDatabase(applicationContext).usuarioDao())
+//        )
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        ivUsuario.setOnClickListener {
-            dispatchTakePictureIntent()
-        }
+//        val usuarioP =
+//            Usuario(1, "Paquita", "Paquita La Del Barrio", "Paquita@LaDelBarrio.com", "123", "foto_perfil.png")
+//        usuarioViewModel.guardarUsuario(usuarioP)
+
+//        ivUsuario.setOnClickListener {
+//            dispatchTakePictureIntent()
+//        }
 
         btnRegistrarse.setOnClickListener {
             val strUsuario: String = etUsuario.text.toString().trim()
@@ -56,7 +59,7 @@ class SignUpActivity : AppCompatActivity() {
             val strContrasena: String = etContrasena.text.toString().trim()
             val strConfirmarContrasena: String = etConfirmarContrasena.text.toString().trim()
 
-            val strFotoDePerfil: String = currentPhotoPath
+            val strFotoDePerfil: String = "" //currentPhotoPath
 
             when {
                 TextUtils.isEmpty(strUsuario) -> {
@@ -73,47 +76,48 @@ class SignUpActivity : AppCompatActivity() {
                 }
                 else -> {
 
-                    val usuarioN =
-                        Usuario(1, strUsuario, strNombre, strCorreo, strContrasena, strFotoDePerfil)
-                    usuarioViewModel.guardarUsuario(usuarioN)
+//                    val usuarioN =
+//                        Usuario(1, strUsuario, strNombre, strCorreo, strContrasena, strFotoDePerfil)
+//                    usuarioViewModel.guardarUsuario(usuarioN)
                     Snackbar.make(it, "Usuario agregado", Snackbar.LENGTH_LONG)
                         .setAction("Iniciar Sesión") { onBackPressed() }.show()
+
                 }
             }
         }
     }
 
-    private fun dispatchTakePictureIntent() {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also {
-
-                val photoFile: File? = try {
-                    createImageFile()
-                } catch (ex: IOException) {
-                    null
-                }
-                photoFile?.also {
-                    val photoURI: Uri = FileProvider.getUriForFile(
-                        this,
-                        "com.example.salud.fileprovider",
-                        it
-                    )
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO)
-                }
-            }
-        }
-    }
-
-    private fun createImageFile(): File {
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile(
-            "JPEG_${timeStamp}_", /* prefix */
-            ".jpg", /* suffix */
-            storageDir /* directory */
-        ).apply {
-            currentPhotoPath = absolutePath
-        }
-    }
+//    private fun dispatchTakePictureIntent() {
+//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+//            takePictureIntent.resolveActivity(packageManager)?.also {
+//
+//                val photoFile: File? = try {
+//                    createImageFile()
+//                } catch (ex: IOException) {
+//                    null
+//                }
+//                photoFile?.also {
+//                    val photoURI: Uri = FileProvider.getUriForFile(
+//                        this,
+//                        "com.example.salud.fileprovider",
+//                        it
+//                    )
+//                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+//                    startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO)
+//                }
+//            }
+//        }
+//    }
+//
+//    private fun createImageFile(): File {
+//        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+//        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+//        return File.createTempFile(
+//            "JPEG_${timeStamp}_", /* prefix */
+//            ".jpg", /* suffix */
+//            storageDir /* directory */
+//        ).apply {
+//            currentPhotoPath = absolutePath
+//        }
+//    }
 }

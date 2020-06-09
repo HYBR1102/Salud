@@ -7,7 +7,7 @@ import com.example.salud.data.Usuario
 import com.example.salud.data.UsuarioRepository
 import kotlinx.coroutines.launch
 
-class UsuarioViewModel(val usuarioRepository: UsuarioRepository): ViewModel() {
+class UsuarioViewModel(private val usuarioRepository: UsuarioRepository): ViewModel() {
 //    val usuario = usuarioRepository.obtenerUsuario(id)
 //    val usuarios = usuarioRepository.obtenerUsuarios()
     fun guardarUsuario(usuario: Usuario) {
