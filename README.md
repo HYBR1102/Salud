@@ -12,8 +12,3 @@ También tenemos un **Menú de opciones** que desplegará la opción de Agregar 
 Si presionamos la opción Agregar alarma se utiliza una **Intención explícita** para abrir una Activity.
 
 En esta Activity tenemos un Spinner que es alimentado por un **Servicio Web** (para consumir el servicio web se utilizo Volley), tenemos un dos Edit Text y dos botones. Uno de los botones sólo es para mostrar uno de los Edit Text en caso de que no se quiera usar lo que contiene el Spinner, mientras que el otro botón guarda la alarma... apareciendo un **Cuadro de diálogo** para confirmar.
-
-Aquí empiezan mis desgracias...
-
-No pude implementar satisfactoriamente **Room** pero se puede ver el intento en la creación de las diferentes clases utilizadas para su funcionamiento.
-Tampoco pude implementar la **Tarea en segundo plano** que planeaba para mi proyecto que es lo de **Alarm Manager**. 
