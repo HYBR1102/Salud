@@ -108,7 +108,7 @@ class SignUpActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
-//
+
 //    private fun createImageFile(): File {
 //        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
 //        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
