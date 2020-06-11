@@ -17,5 +17,3 @@ Aquí empiezan mis desgracias...
 
 No pude implementar satisfactoriamente **Room** pero se puede ver el intento en la creación de las diferentes clases utilizadas para su funcionamiento.
 Tampoco pude implementar la **Tarea en segundo plano** que planeaba para mi proyecto que es lo de **Alarm Manager**. 
-
-
